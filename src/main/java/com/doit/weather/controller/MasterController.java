@@ -1,7 +1,7 @@
 package com.doit.weather.controller;
 
 import com.doit.weather.model.ForecastResponse;
-import com.doit.weather.service.ForcastService;
+import com.doit.weather.service.ForecastService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,11 +21,14 @@ public class MasterController {
   RestTemplate restTemplate;
   
   @Autowired
-  ForcastService forcastService;
+  ForecastService forecastService;
   
   @GetMapping ("/city={cityName}")
   public ResponseEntity<?> getWeatherData(@PathVariable String cityName) {
-    List<ForecastResponse> forecastResponses = forcastService.getWeatherData(cityName);
+    List<ForecastResponse> forecastResponses = forecastService.getWeatherData(cityName);
+    if(forecastResponses == null || forecastResponses.isEmpty()){
+      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
     return new ResponseEntity<>(forecastResponses, HttpStatus.OK);
   }
 }

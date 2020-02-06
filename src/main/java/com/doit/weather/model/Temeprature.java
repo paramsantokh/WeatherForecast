@@ -2,7 +2,7 @@ package com.doit.weather.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Temprature {
+public class Temeprature {
   @JsonProperty ("temp_min")
   double minTemp;
   @JsonProperty ("temp_max")

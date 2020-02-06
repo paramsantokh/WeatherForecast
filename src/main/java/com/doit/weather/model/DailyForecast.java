@@ -6,13 +6,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class DailyForcast {
+public class DailyForecast {
   @JsonProperty ("dt_txt")
   @JsonFormat (pattern = "yyyy-MM-dd HH:mm:ss")
   LocalDateTime date;
   
   @JsonProperty("main")
-  Temprature main;
+  Temeprature main;
   
   @JsonProperty("weather")
   List<Weather> weather;
@@ -25,11 +25,11 @@ public class DailyForcast {
     this.date = date;
   }
   
-  public Temprature getMain() {
+  public Temeprature getMain() {
     return main;
   }
   
-  public void setMain(Temprature main) {
+  public void setMain(Temeprature main) {
     this.main = main;
   }
   

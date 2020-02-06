@@ -4,16 +4,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class ForcastModel {
+public class ForecastModel {
   
   @JsonProperty ("list")
-  List<DailyForcast> list;
+  List<DailyForecast> list;
   
-  public List<DailyForcast> getList() {
+  public List<DailyForecast> getList() {
     return list;
   }
   
-  public void setList(List<DailyForcast> list) {
+  public void setList(List<DailyForecast> list) {
     this.list = list;
   }
 }
