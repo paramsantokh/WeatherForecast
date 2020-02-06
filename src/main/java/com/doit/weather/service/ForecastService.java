@@ -39,6 +39,11 @@ public class ForecastService {
     return buildForecastResponse(forecastModel);
   }
   
+  /**
+   * Build the forecast response
+   * @param forecastModel
+   * @return forecasts for configured days
+   */
   private List<ForecastResponse> buildForecastResponse(ForecastModel forecastModel) {
     LocalDate startDate = LocalDate.now().plusDays(1);
     LocalDate endDate = startDate.plusDays(forecastConfig.getDays() - 1);
