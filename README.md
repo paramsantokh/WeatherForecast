@@ -4,5 +4,5 @@ URL and forecasts days are configured in application.properties.
 
 You can change the configured url for other country codes.
 
-#URL
+# URL
 http://localhost:8080/weather-forcast/city=Jaipur
